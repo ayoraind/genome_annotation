@@ -25,6 +25,7 @@
 ## Introduction
 This pipeline annotates genomes using bakta (using the `--bakta` option) or prokka (using the `--prokka` option). This Nextflow pipeline was adapted from NF Core's [bakta module](https://github.com/nf-core/modules/tree/master/modules/nf-core/bakta/bakta) and NF Core's [prokka module](https://github.com/nf-core/modules/tree/master/modules/nf-core/prokka).  
 
+Bakta databases (full or light) can be downloaded from the [bakta Github page](https://github.com/oschwengers/bakta#database-download), or from [here](https://zenodo.org/record/7669534).
 
 ## Sample command
 An example of a command to run this pipeline for bakta is:
