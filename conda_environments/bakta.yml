@@ -1,7 +1,14 @@
 name: bakta
 channels:
-  - conda-forge
   - bioconda
+  - conda-forge
 dependencies:
-  - bioconda::bakta=1.8.2
+  - bioconda::bakta=1.9.4=pyhdfd78af_0
+  - aragorn=1.2.41=h031d066_3
+  - blast=2.16.0=hc155240_2
+  - diamond=2.1.8=h43eeafb_0
+  - infernal=1.1.5=pl5321h031d066_2
+  - pyrodigal=3.5.1=py310h7c593f9_1
+  - python=3.10.14=hd12c33a_0_cpython
+  - trnascan-se=2.0.12=pl5321h031d066_0
  
