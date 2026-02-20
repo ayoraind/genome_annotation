@@ -37,7 +37,7 @@ workflow {
     pipeline_start_message(pipeline_version, final_params)
 
     if (final_params.assemblies && final_params.output_dir) {
-        assemblies_ch = channel
+        def assemblies_ch = channel
         			.fromPath(final_params.assemblies)
         			.map { file -> tuple(file.simpleName, file) }
         			.ifEmpty { error "Cannot find any assembly fasta file matching: ${final_params.assemblies}" }
@@ -55,13 +55,14 @@ workflow {
         error "Please specify a file path to the assembly directories '--assemblies fastas/*.fasta' and an output directory '--output_dir output'"
     }
 
-    workflow.onComplete {
-                        complete_message(final_params, workflow, pipeline_version)
-                    }
+    workflow.onComplete { 
+        complete_message(final_params, workflow, pipeline_version)
+    }
 
-    workflow.onError {
-                        error_message(workflow)
-                        }
+    workflow.onError {                
+        error_message(workflow)
+    }
+                        
 }
 
 
