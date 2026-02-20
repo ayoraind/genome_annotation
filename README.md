@@ -31,19 +31,24 @@ Bakta databases (full or light) can be downloaded from the [bakta Github page](h
 An example of a command to run this pipeline for bakta is:
 
 ```
-nextflow run main.nf --assemblies '*.fasta' --output_dir test3 --bakta --bakta_db /absolute/file/path/to/db
+nextflow run main.nf --assemblies '*.fasta' --output_dir test3 --bakta --bakta_db /absolute/file/path/to/db -profile conda
 
 ```
 
 and for prokka is:
 ```
-nextflow run main.nf --assemblies '*.fasta' --output_dir 'test4' --prokka
+nextflow run main.nf --assemblies '*.fasta' --output_dir 'test4' --prokka -profile conda
 
 ```
 
+and for running on HPC is:
+```
+nextflow run main.nf --assemblies '*.fasta' --output_dir 'test4' --prokka -profile conda,slurm
+
+```
 
 ## Word of Note
-This is an ongoing project at the Microbial Genome Analysis Group, Institute for Infection Prevention and Hospital Epidemiology, Üniversitätsklinikum, Freiburg. The project is funded by BMBF, Germany, and is led by [Dr. Sandra Reuter](https://www.uniklinik-freiburg.de/institute-for-infection-prevention-and-control/microbial-genome-analysis.html).
+This is an ongoing project at the Microbial Genome Analysis Group, Institute for Infection Prevention and Hospital Epidemiology, ï¿½niversitï¿½tsklinikum, Freiburg. The project is funded by BMBF, Germany, and is led by [Dr. Sandra Reuter](https://www.uniklinik-freiburg.de/institute-for-infection-prevention-and-control/microbial-genome-analysis.html).
 
 
 ## Authors and acknowledgment
