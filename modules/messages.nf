@@ -51,7 +51,7 @@ def pipeline_start_message(String version, Map params){
 }
 
 
-def complete_message(Map params, nextflow.script.WorkflowMetadata workflow, String version){
+def complete_message(Map _params, nextflow.script.WorkflowMetadata workflow, String version){
     // Display complete message
     log.info ""
     log.info "Ran the workflow: ${workflow.scriptName} ${version}"
