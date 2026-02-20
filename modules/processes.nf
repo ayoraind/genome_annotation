@@ -1,8 +1,8 @@
 process PROKKA {
     tag "$sample_id"
     
-    publishDir params.output_dir, mode: 'copy'
-    
+    conda "bioconda::prokka=1.15.6"
+
     input:
         tuple val(sample_id), path(fastas)
 
@@ -40,8 +40,8 @@ process PROKKA {
 process BAKTA {
     tag "$sample_id"
     
-    publishDir params.output_dir, mode: 'copy'
-    
+    conda "bioconda::bakta=1.12.0"
+
     input:
         tuple val(sample_id), path(fastas)
         path db
@@ -66,7 +66,7 @@ process BAKTA {
     task.ext.when == null || task.ext.when
         
     script:
-    def args = task.ext.args   ?: ''
+    def _args = task.ext.args   ?: ''
     
     """
     bakta --db ${db} --keep-contig-headers --threads $task.cpus --prefix ${sample_id} --output ${sample_id}_bakta ${fastas}
