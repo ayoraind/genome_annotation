@@ -55,11 +55,11 @@ workflow {
         error "Please specify a file path to the assembly directories '--assemblies fastas/*.fasta' and an output directory '--output_dir output'"
     }
 
-    workflow.onComplete { 
+    workflow.onComplete = { 
         complete_message(final_params, workflow, pipeline_version)
     }
 
-    workflow.onError {                
+    workflow.onError = {                
         error_message(workflow)
     }
                         
