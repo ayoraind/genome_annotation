@@ -8,3 +8,6 @@ G230309.txt
 .default_output
 database
 db*
+null*
+conda_environments/*
+pipeline*
